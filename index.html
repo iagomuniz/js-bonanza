@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/animacao.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/especificos.css">
+    <title>episódio 5 - javascript</title>
+</head>
+<body>
+    <header>
+        <h1>Vamos falar sobre JS?</h1>
+    </header>
+    <main>
+        <p>JS é uma linguagem de programação interpretada, ou seja, não precisa ser compilada para ser executada.</p>
+        <button id = "botao" class = "botao-arredondado">ok. Mas qual a funcionalidade principal?</button>
+        <p class = "centered textoSubstituivel">Bem, clique no botão e você irá descobrir</p>
+    </main>
+    <div class = "relogio centered"></div>
+    <section class = "secao-explicacao std-margin">
+        normalmente ela é usada para formulários. coisas como dar highlights e guardar seus dados em um .json para enviar para a backend. <br>
+        Além de validar informações, como o email ou CPF, ela faz uma gama de operações. É até bom, pois desafoga um pouco a backend, que ficaria responsável por validar os dados e retorná-los. Javascript faz isso e retorna para o backend, que só precisa fazer uma camada de validação mais complexa dos dados para enviá-los para o banco de dados.
+    </section><HR>
+    <section class = "secao-explicacao centered std-margin nav-btn-explicacao">
+        <button class = "botao-arredondado">funções</button>
+        <button class = "botao-arredondado">objetos</button>
+        <button class = "botao-arredondado">eventos</button>
+        <button class = "botao-arredondado">arrays</button>
+        <button class = "botao-arredondado">repetições</button>
+        <button class = "botao-arredondado">formulário</button>
+        <button class = "botao-arredondado">canvas</button>
+        <button class = "botao-arredondado">eventos de tempo</button> 
+    </section>
+    <div class = "topicos">
+        <section class ="secao-explicacao std-margin">
+            <h2>Funções</h2>
+            <p>Ao longo de todos os códigos JS desse site foram usadas as famigeradas <strong>Funções</strong>
+                <br>
+                elas são como se fossem uns <sup>mini</sup> programas dentro do seu programa principal, você pode chamar elas quantas vezes quiser e elas podem ser usadas em qualquer lugar do seu código. Elas são criadas com a palavra reservada <code class = "code-decoration">function</code> e tem o seguinte formato:<br>
+
+                <p onclick = "alertarAlgo('quem que usa onclick em paragrafo? bem, isso é um exemplo, meio que demonstra que você pode usar onclick em qualquer coisa')" style = "cursor: pointer;">
+                    function nomeDaFuncao(parametros...){<br>
+                    &ensp; &ensp; //codigo<br>
+                    }<br>
+                </p>
+                <p>
+                Funções também podem ser declaradas sem ter um nome. E inclusive serem puxadas para variáveis ou para dentro de objetos, arrays e outras funções.
+                </p>
+            </p>
+        </section>
+        <section class ="secao-explicacao std-margin">
+            <h2>objetos</h2>
+            <p>
+                objetos são bastante importantes e interessantes de serem usados, tanto que sua notação é usada em arquivos JSON.
+                é o famoso array com indices de strings. Eles são criados com chaves <code class = "code-decoration">{}</code>
+            </p>
+            <p>
+                um exemplo que temos aqui é um objeto carro. Observe que no HTML, o elemento está vazio, o JS que preenche ele com o objeto.
+                <br>
+                você pode até se perguntar, mas você não poderia só fazer isso com variaveis normais no javascript? E a resposta é sim, você pode, mas objetos são mais flexíveis e podem ser usados para criar estruturas de dados mais complexas. e um carro é um baita objeto complexo, com informações como cor, marca, modelo, ano... o que sse tivessem 2 já ficaria confuso.
+            </p>
+            <div class = "carro" id = "carro-objeto"></div>
+        </section>
+        <section class ="secao-explicacao std-margin">
+            <h2>Eventos</h2>
+            <p>
+                eventos são usados para interagir com o usuário. Eles são usados para detectar quando um usuário interage com o site, como clicar em um botão, tocar em certas areas da tela, precionar teclas do teclado ou digitar em um campo de texto.
+            </p>
+            <p>
+                eles podem ser inline ou declarados pegando o elemento e trazendo-o para o arquivo de script.
+                <br>
+                Para inline temos um atributo chamado <code class = "code-decoration">onclick</code> que recebe uma função ou snippet de código em JS.
+                a sintaxe deles quase sempre se baseia em usar o prefixo "on" no inicio do evento:
+                <ul>
+                    <li>onclick</li>
+                    <li>onload</li>
+                    <li>ondblclick</li>
+                    <li>oncontextmenu</li>
+                    <li>onfocus</li>
+                    <li>onblur</li>
+                    <li>onscroll</li>
+                    <li>onresize</li>
+                    <li>onkeydown</li>
+                    <li>onkeyup</li>
+                    <li>onkeypress</li>
+                    <li>onmousedown</li>
+                    <li>onmouseup</li>
+                    <li>onmousemove</li>
+                    <li>onmouseover</li>
+                    <li>onmouseout</li>
+                    <li>onchange</li>
+                    <li>onsubmit</li>
+                    ...
+                </ul>
+                Mas não são só esses que existem
+                temos eventos de mouse, teclado, formulário, touch, resize, e até eventos para saber se existe um gamepad conectado.
+                <br>
+                para arquivos separados pegamos o elemento por id ou classe e adicionamos um escutador de eventos. você pode adicionar multiplos eventos no mesmo elemento. Aqui o prefixo "on" não é necessário.
+
+                <button class = "button-look" onclick = "interacaoInline()">Interação do jeito Inline</button>
+            </p>
+            <div class = "event-div" onclick = "changeToRandomColor(this, 0, 25)" onmousemove = "changeToRandomColor(this, 150, 255)" onmouseup = "changeToRandomColor(this, 150, 200)"></div>
+            <textarea id = "input" class = std-margin type="textarea" placeholder="Digite algo" onfocus = "mudarTamanhoDoInput(this, '90%'); this.placeholder = 'digite algo...'" onblur = "mudarTamanhoDoInput(this, '1em'); this.placeholder = ''"></textarea>
+        </section>
+        <section class="secao-explicacao std-margin">
+            <h2>Arrays</h2>
+            <p>Um array é um objeto que pode armazenar multiplos valores. Para criar um array você pode usar o construtor Array(), o simbolo <code class = "code-decoration">[]</code> ou simplesmente declarar um objeto com chaves numéricas. O array é um objeto especial que possui métodos para manipular seus elementos.</p>
+            <pre class = "code-decoration">
+    1        const arr = [
+    2            {nome: 'João', idade: 20},
+    3            {nome: 'Maria', idade: 25},
+    4            {nome: 'Pedro', idade: 30}
+    5        ];</pre>
+            <p>Para acessar um elemento do array você pode usar a notação de colchetes <code class = "code-decoration">[n]</code> passando o índice do elemento que você deseja acessar. O índice começa em 0.</p>
+        </section>
+        <section class ="secao-explicacao std-margin"> 
+            <h2>Estrutras de repetição
+
+            </h2>
+            <p>As estruturas de repetição são usadas para repetir um bloco de código várias vezes, elas são usadas quando você quer fazer algo várias vezes. Isso é bastante importante, pois permite que a repetição de código seja automática, além de percorrer dados de estruturas mais... robustas, se pudermos dizer; elas podem ser criadas com multiplas palavras reservadas diferentes: <code class = "code-decoration">for</code> <code class = "code-decoration">while</code> e <code class = "code-decoration">do while</code> e cada uma tem um uso diferente (apesar de fazerem quase a mesma coisa)</p>
+        </section>
+        <section class = "secao-explicacao std-margin">
+            <h2>Formulários</h2>
+            <p>Eu acho que eu já falei em oportunidades anteriores, mas Javascript possui condicionais, e elas são relativamente simples, uma aplicação delas que existem é a validação de formularios, é mais interessante do que parece, e na verdade permite que você tenha mais camadas de verificação antes de ir pro banco de dados, em momentos mais oportunos eu jogo mais informações de como isso existe...<br>
+            o formulario em questão </p>
+            <form class = "form">
+                <input id = 'input__nome' type = 'text' placeholder = "nome aqui"/>
+                <br/>
+                <br>
+                <input id = 'input__email' type = 'email' placeholder = "email aqui"/>
+                <br/>
+                <br>
+                <input type="color" name="cor" id="cor">
+                <br><br>
+                <input type ='date' id = 'input__data' placeholder = "data de nascimento"/>
+                <br/><br>
+                <select id = "select">
+
+                </select>
+                <input id = 'input__enviar' class ="botao-arredondado" onclick = "formulair.validar()" type = "button" value = "enviar"/>
+                <div class = "form__msg"></div>
+            </form>
+        </section>
+        <section class = "secao-explicacao">
+            <canvas id = "telaPrincipal">Calma aí amigo.</canvas>
+            <canvas class="ausente" id = "telaSecundaria">Calma aí amigo.</canvas>
+        </section>
+        <section class = "secao-explicacao std-margin">
+            <h2>cronometro</h2>
+            <div id = "cronometro" class = "timers">
+                <div class = "cronometro__tempo">00:00:00</div>
+                <div class = flex-row>
+                    <button id = "ativar" class = "cronometro__botao">
+                        <svg viewbox = "0 0 12 12">
+                            <path d="M 2 0 l 10 6 l -10 6z"></path>
+                        </svg>
+                    </button>
+                    <button id = "parar" class = "cronometro__botao">
+                        <svg viewbox = "0 0 11 11">
+                            <rect x = "1" y = "1" width = 3 height = 9></rect>
+                            <rect x = "6" y = "1" width = 3 height = 9></rect>
+                        </svg>
+                    </button>
+                    <button id = "resetar" class = "cronometro__botao">resetar</button>
+                </div>
+            </div>    
+        </section>
+        <section class = "secao-explicacao std-margin">
+            <h2>classes</h2>
+            <p>Dez anos atrás chegavam as classes no javascript, e para a alegria de um e a tristeza de outros elas funcionam e em tese tentariam fazer com que você, o programador conseguisse fazer orientação a objetos. Caso você seja alguém as astuto ou sei lá o que, você já deve ter notado que em varias linguagens existem classes e que isso talvez seja foreshadowing para o manifesto ágil. E você estaria correto.</p>
+            <h2>Mas afinal, sr bonanza, o que são as classes?</h2>
+            <p>Classes são as plantas dos objetos, é como se fosse um molde de objeto que você daria valores para ele e ele seria criado para ser usado como quisesse. Antigamente isso era feito com algumas técnicas estranhas, como retornar um objeto por uma função ou copiar ele e modificar os valores.</p>
+            <p>
+                assim como muitas coisas no javascript classes tendem a ser coisas que a principio você não entende, até mesmo programadores exeprientes não entendem bem o seu uso, visto que isso foi lançado 10 anos atrás o que meio que faz as pessoas experientes ficarem mais acostumadas aos metodos antigos.
+            </p>
+        </section>
+    </div>
+    <footer class="cookie-footer fixed-bottom flex-row">
+        <p class = "paragrafo-de-cookies">você pode fazer mais que ancoras e menus mais avançados. podemos salvar informações no localStorage, guardar como <strong>cookies</strong> e até mesmo criar um jogo.<br></p>
+        <div class = "flex-column">
+            <button class = "botao-de-cookies botao-arredondado">
+                aceitar cookies
+            </button>
+            <button class = "botao-de-negar-cookies botao-arredondado">
+                negar cookies
+            </button>
+        </div>
+    </footer>
+    <script src = "interacoes.js"></script>
+    <script src = "JS/cookies.js"></script>
+    <script src = "JS/condicionais.js"></script>
+    <script src = "JS/eventosDeTempo.js"></script>
+</body>
+</html>
+    <footer>
+        &copy 2025 - Lonlysoft && iagomuniz
+    </footer>
+</body>
+</body>
+</html>

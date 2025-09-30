@@ -1,0 +1,150 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    overflow:hidden;
+    text-align: center;
+    animation: background-flow-left linear 5s infinite;
+}
+
+h1{
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    animation: text-flow-right linear 5s infinite;
+}
+
+main{
+    padding: 20px;
+    text-align: center;
+}
+
+input{
+    padding: 0.5rem;
+    border-radius: 2em;
+    border: 1px dashed #000;
+}
+
+input[type="color"]{
+    padding: 0;
+    width: 10em;
+    height: calc(1em+0.5rem*2);
+    border:none;
+    cursor: pointer;
+}
+
+.ausente{
+    display: none;
+}
+
+.icon-small{
+    width: 1em;
+    height: 1em;
+}
+
+.icon-medium{
+    width: 2em
+}
+
+.icon-big{
+    width: 3em;
+}
+
+.icon-huge{
+    width: 4em;
+}
+
+.icon-hyper{
+    width: 19em;
+}
+
+.textoSubstituivel{
+    transition: opacity 2s;
+}
+
+.botao{
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.botao-arredondado{
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.botao-arredondado:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+.botao:hover{
+    background-color: #fff;
+}
+
+.botao-arredondado.selecionado{
+    background-color: #fff;
+    color: #000;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.fixed-bottom{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    z-index: 9999;
+}
+
+.std-margin{
+    margin:1.7rem;
+}
+
+.std-padding{
+    padding: 1.7rem
+}
+
+canvas{
+    border: 1px solid #000;
+    position:relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width:70%;
+    height: 70%;
+}
+
+#telaPrincipal{
+    background-color: #fff
+}
+
+.centered{
+    text-align: center;
+}

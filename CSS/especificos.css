@@ -1,0 +1,152 @@
+/*estilos especificos para elementos que aparecem pouco.*/
+
+.cookie-footer{
+    background: linear-gradient(to right, #ff9a9e, #fad0c4
+    );
+}
+
+.paragrafo-de-cookies{
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: left;
+    width: 70%;
+}
+
+.botao-de-cookies{
+    background: #fff;
+    color: #9eff9e;
+    border: 1px solid #9aff9e;
+}
+
+.botao-de-negar-cookies{
+    background: #fff;
+    color: #ff9a9e;
+    border: 1px solid #ff9a9e;
+}
+
+.code-decoration{
+    color: #ff9;
+    background: #667;
+    padding: 0.3em 1rem;
+    border-radius: 4px;
+}
+
+.output{
+    color: #888;
+    font-family: monospace;
+    font-size: 1em;
+    line-height: 0.2;    
+    background: #334;
+    border-radius: 4px;
+    overflow-x: hidden;
+    padding-bottom:0.5em;
+}
+.output p{
+    padding: 0.5em;
+    margin: 0;
+}
+
+.output::before{
+    content: "output";
+    display:block;
+    color: #999;
+    background:#223;
+    font-weight: 700;
+    width:100%;
+    padding: 1em 0.5em;
+    font-size: 1em;
+    margin-right: 0.5rem;
+}
+
+.event-div{
+    width: 2em;
+    height: 2em;
+    background: #847;
+}
+.topicos .secao-explicacao{
+    display: none;
+}
+
+.topicos .secao-explicacao.selecionado{
+    display:block;
+}
+
+.relogio{
+    font-size: 2.5rem;
+    font-family: monospace;
+    padding: 0.2em 0.5em;
+    background: #001;
+    color: #ffa;
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border: 1px solid #ffa;
+}
+
+.cronometro__botao{
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
+    padding: 0.5em;
+}
+
+.cronometro__botao:hover{
+    background: #ff9;
+}
+.cronometro__botao:active{
+    background: #ff6;
+    border: none;
+    fill: #ff2;
+}
+.cronometro__botao svg{
+    width:100%;
+}
+
+.cubo{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: #ff9;
+    margin: 0 auto;
+    transform: rotateX(-45deg) rotateY(45deg);
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.cubo:hover{
+    transform: rotateX(90deg) rotateY(90deg);
+}
+
+.cubo .face{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background: #f00;
+    opacity: 0.5;
+    border: 1px dashed #000;
+}
+
+.cubo .face.topo{
+    transform: rotateX(90deg) translateZ(50px);
+}
+.cubo .face.baixo{
+    transform: rotateX(-90deg) translateZ(50px);
+}
+.cubo .face.esquerda{
+    transform: rotateY(-90deg) translateZ(50px);
+}
+.cubo .face.direita{
+    transform: rotateY(90deg) translateZ(50px);
+}
+.cubo .face.frente{
+    transform: translateZ(50px);
+}
+.cubo .face.atras{
+    transform: rotateY(180deg) translateZ(50px);
+}
+.cubo .face.topo{
+    background: #f00;
+}

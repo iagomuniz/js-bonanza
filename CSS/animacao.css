@@ -1,0 +1,23 @@
+@keyframes background-flow-left{
+    from{
+        background-position: 0 0;
+    } to{
+        background-position: -100px 0;
+    }
+}
+
+@keyframes text-flow-right{
+    from{
+        transform: translateX(-100%);
+    } to{
+        transform: translateX(100%);
+    }
+}
+
+@keyframes text-flow-left{
+    from{
+        transform: translateX(0);
+    } to{
+        transform: translateX(-100px);
+    }
+}

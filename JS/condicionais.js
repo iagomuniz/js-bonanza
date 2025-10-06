@@ -20,8 +20,10 @@ const Relogio = {
             this.hora = new Date().getHours();
             this.minuto = new Date().getMinutes();
             this.segundo = new Date().getSeconds();
-            this.DOM.innerHTML = `${this.hora}:${(this.minuto>10)?this.minuto:"0" + this.minuto}:${this.segundo}`;
-        }, 1000)
+            this.DOM.innerHTML = `${this.hora}:${(this.minuto>9)?this.minuto:"0" + this.minuto}:${
+                (this.segundo < 9)? "0" + this.segundo : this.segundo
+            }`;
+        }, 100)
     }
 }
 
